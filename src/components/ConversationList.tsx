@@ -7,9 +7,9 @@ export interface ConversationListProps {
 
 export const ConversationList = (props: ConversationListProps) => {
   return (
-    <div className="w-full mt-14 overscroll-content">
+    <div className="absolute w-full bottom-0 top-14 sm:w-80 sm:border-r sm:border-slate-300 sm:bottom-0 overflow-y-auto">
       {props.conversations.map((convo) => (
-        <div key={convo.id} className="hover:bg-gray-200 cursor-pointer p-2">
+        <div key={convo.id} className="hover:bg-gray-100 cursor-pointer p-2">
           <Link to={`/${convo.id}`}>
             <div className="flex flex-row justify-start items-center gap-3">
               <div>
