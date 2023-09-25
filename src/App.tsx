@@ -24,46 +24,6 @@ const DUMMY_CONVERSATION: Conversation[] = [
     timestamp: Date.now(),
     read: true,
   },
-  {
-    id: "3",
-    name: "Lorem Ipsum 2",
-    conversation: conMes[1].conversation,
-    avatar: "./src/assets/img/image2.jpg",
-    timestamp: Date.now(),
-    read: true,
-  },
-  {
-    id: "4",
-    name: "Lorem Ipsum 2",
-    conversation: conMes[1].conversation,
-    avatar: "./src/assets/img/image2.jpg",
-    timestamp: Date.now(),
-    read: true,
-  },
-  {
-    id: "5",
-    name: "Lorem Ipsum 2",
-    conversation: conMes[1].conversation,
-    avatar: "./src/assets/img/image2.jpg",
-    timestamp: Date.now(),
-    read: true,
-  },
-  {
-    id: "6",
-    name: "Lorem Ipsum 2",
-    conversation: conMes[1].conversation,
-    avatar: "./src/assets/img/image2.jpg",
-    timestamp: Date.now(),
-    read: true,
-  },
-  {
-    id: "7",
-    name: "Lorem Ipsum 2",
-    conversation: conMes[1].conversation,
-    avatar: "./src/assets/img/image2.jpg",
-    timestamp: Date.now(),
-    read: true,
-  },
 ];
 
 function App() {
