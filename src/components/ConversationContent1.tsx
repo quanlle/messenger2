@@ -1,30 +1,13 @@
 import { Link } from "react-router-dom";
 import { useRef, useEffect } from "react";
 import { atom, useAtom } from "jotai";
+import { conMes } from "../types/conversation-mess";
+import { ConversationListProps } from "./ConversationList";
 
 const curMesAtom = atom("");
-const mesAtom = atom([
-  "alo",
-  "alo",
-  "alo",
-  "Kính đề nghị các Thầy/Cô cố vấn học tập rà soát những trường hợp sinh viên còn thiếu Chuẩn đầu ra ngoai ngu",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-  "alo",
-]);
+const mesAtom = atom(conMes[0].conversation);
 
-export const ConversationContent1 = () => {
+export const ConversationContent1 = (props: ConversationListProps) => {
   const [curMes, setCurMes] = useAtom(curMesAtom);
   const [mes, setMes] = useAtom(mesAtom);
 
@@ -43,9 +26,9 @@ export const ConversationContent1 = () => {
 
   const flipMesBg = (index: number) => {
     if (index % 2 == 0) {
-      return "max-w-xs h-fit px-3 py-1 rounded-2xl bg-slate-200";
+      return "max-w-xs h-fit px-3 py-1 pb-1.5 rounded-3xl bg-slate-200";
     } else {
-      return "max-w-xs h-fit px-3 py-1 rounded-2xl bg-blue-600";
+      return "max-w-xs h-fit px-3 py-1 pb-1.5 rounded-3xl bg-blue-600";
     }
   };
 
@@ -62,20 +45,42 @@ export const ConversationContent1 = () => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
-    <div>
+    <div className="">
       <div className="absolute left-0 right-0 top-0 bottom-0 bg-white sm:right-0 sm:left-80 sm:top-14">
         {/* header */}
-        <div className="fixed top-0 right-0 left-0 h-14 flex flex-row items-center border-b border-slate-300 sm:hidden">
+        <div className="fixed top-0 right-0 left-0 h-16 border-b flex flex-row items-center border-slate-300 sm:left-80 sm:top-14 shadow-md">
           <Link to="/">
             <img
               src="./src/assets/img/back-ic.png"
-              className="w-7 h-7 mx-1 hover:bg-slate-200 rounded-md"
+              className="w-7 h-7 ml-4 hover:bg-slate-200 rounded-md sm:hidden"
             />
           </Link>
+          <div className="flex flex-row grow items-center">
+            <img
+              src={props.conversations[0].avatar}
+              className="w-10 h-10 ml-4 rounded-full"
+            ></img>
+            <div className="ml-2 flex flex-col">
+              <div className="text-base font-bold">
+                {props.conversations[0].name}
+              </div>
+              <div className="text-xs opacity-50">
+                {props.conversations[0].timestamp}
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-row justify-end mr-4">
+            <img src="./src/assets/img/call-ic.png" className="w-5 h-5 mx-2" />
+            <img
+              src="./src/assets/img/vidcall-ic.png"
+              className="w-5 h-5 mx-2"
+            />
+            <img src="./src/assets/img/info-ic.png" className="w-5 h-5 mx-2" />
+          </div>
         </div>
         {/* Message content */}
         <div
-          className="absolute w-full top-14 bottom-14 sm:top-0 sm:bottom-14 overflow-y-auto"
+          className="absolute w-full top-16 bottom-14 sm:top-16 sm:bottom-14 overflow-y-auto"
           onClick={() => inputRef.current?.focus()}
         >
           <div className="absolute top-2 bottom-2 left-2 right-2 h-fit">
@@ -127,7 +132,7 @@ export const ConversationContent1 = () => {
           />
         </div>
       </div>
-      {void console.log("Re-render ConversationComponent")}
+      {/* {void console.log("Re-render ConversationComponent")} */}
     </div>
   );
 };

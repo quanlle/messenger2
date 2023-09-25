@@ -9,21 +9,21 @@ export interface ConversationListProps {
 export const ConversationList = (props: ConversationListProps) => {
   const location = useLocation().pathname;
   var locationId = Number(location.slice(1)) - 1;
-  const [state, changeState] = useState(locationId);
+  const [activeId, changeActiveId] = useState(locationId);
 
   useEffect(() => {
     if (location == "/") {
-      changeState(-1);
+      changeActiveId(-1);
     }
   }, [location]);
 
   const handleClick = (index: number) => {
-    changeState(index);
+    changeActiveId(index);
     toggleActive(index);
   };
 
   const toggleActive = (index: number) => {
-    if (state != index) {
+    if (activeId != index) {
       return "hover:bg-gray-100 cursor-pointer p-2";
     } else {
       return "hover:bg-gray-100 cursor-pointer p-2 sm:bg-slate-200";
@@ -46,7 +46,7 @@ export const ConversationList = (props: ConversationListProps) => {
               <div className="flex flex-col justify-start items-start">
                 <div className="font-bold text-lg">{convo.name}</div>
                 <div className="text-md italic text-black/60">
-                  {convo.lastMessage}
+                  {convo.conversation[convo.conversation.length - 1]}
                 </div>
               </div>
             </div>
