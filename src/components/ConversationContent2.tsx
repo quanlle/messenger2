@@ -46,9 +46,9 @@ export const ConversationContent2 = (props: ConversationListProps) => {
 
   return (
     <div className="">
-      <div className="absolute left-0 right-0 top-0 bottom-0 bg-white sm:right-0 sm:left-80 sm:top-14">
+      <div className="absolute left-0 right-0 top-0 bottom-0 bg-white sm:right-0 sm:left-[360px] sm:top-14">
         {/* header */}
-        <div className="fixed top-0 right-0 left-0 h-16 border-b flex flex-row items-center border-slate-300 sm:left-80 sm:top-14 shadow-md">
+        <div className="fixed top-0 right-0 left-0 h-16 border-b flex flex-row items-center sm:left-[360px] sm:top-14 shadow-md shadow-slate-100">
           <Link to="/">
             <img
               src="./src/assets/img/back-ic.png"
@@ -95,7 +95,7 @@ export const ConversationContent2 = (props: ConversationListProps) => {
           </div>
         </div>
         {/* footer */}
-        <div className="fixed bottom-0 flex flex-row items-center h-14 bg-white w-full sm:w-auto sm:left-80 sm:right-0">
+        <div className="fixed bottom-0 flex flex-row items-center h-14 bg-white w-full sm:w-auto sm:left-[360px] sm:right-0">
           <img
             src="./src/assets/img/plus-ic.png"
             className="w-7 h-7 p-1 hover:bg-slate-200 rounded-md cursor-pointer ml-3"

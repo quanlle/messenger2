@@ -4,8 +4,8 @@ import { ConversationList } from "./components/ConversationList";
 import { Conversation } from "./types/conversation-item";
 import { ConversationContent1 } from "./components/ConversationContent1";
 import { ConversationContent2 } from "./components/ConversationContent2";
-import { Blank } from "./components/Blank";
 import { conMes } from "./types/conversation-mess";
+import { Blank } from "./components/Blank";
 
 const DUMMY_CONVERSATION: Conversation[] = [
   {
@@ -24,12 +24,51 @@ const DUMMY_CONVERSATION: Conversation[] = [
     timestamp: Date.now(),
     read: true,
   },
+  {
+    id: "3",
+    name: "Lorem Ipsum 2",
+    conversation: conMes[1].conversation,
+    avatar: "./src/assets/img/image2.jpg",
+    timestamp: Date.now(),
+    read: true,
+  },
+  {
+    id: "4",
+    name: "Lorem Ipsum 2",
+    conversation: conMes[1].conversation,
+    avatar: "./src/assets/img/image2.jpg",
+    timestamp: Date.now(),
+    read: true,
+  },
+  {
+    id: "5",
+    name: "Lorem Ipsum 2",
+    conversation: conMes[1].conversation,
+    avatar: "./src/assets/img/image2.jpg",
+    timestamp: Date.now(),
+    read: true,
+  },
+  {
+    id: "6",
+    name: "Lorem Ipsum 2",
+    conversation: conMes[1].conversation,
+    avatar: "./src/assets/img/image2.jpg",
+    timestamp: Date.now(),
+    read: true,
+  },
+  {
+    id: "7",
+    name: "Lorem Ipsum 2",
+    conversation: conMes[1].conversation,
+    avatar: "./src/assets/img/image2.jpg",
+    timestamp: Date.now(),
+    read: true,
+  },
 ];
 
 function App() {
   return (
     <div className="card h-screen w-screen relative">
-      <Header />
       <ConversationList conversations={DUMMY_CONVERSATION} />
       <Blank />
       <Routes>
@@ -42,6 +81,7 @@ function App() {
           element={<ConversationContent2 conversations={DUMMY_CONVERSATION} />}
         />
       </Routes>
+      <Header />
     </div>
   );
 }
